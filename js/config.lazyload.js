@@ -28,6 +28,7 @@ angular.module('app')
 					'vendor/jquery/datatables/dataTables.bootstrap.css'],
 		vectorMap:	['vendor/jquery/jvectormap/jquery-jvectormap.min.js',
 					'vendor/jquery/jvectormap/jquery-jvectormap-world-mill-en.js',
+					'vendor/jquery/jvectormap/jquery-jvectormap-us-aea-en.js',
 					'vendor/jquery/jvectormap/jquery-jvectormap.css'],
 		footable:	['vendor/jquery/footable/footable.all.min.js',
 					'vendor/jquery/footable/footable.core.css']
