@@ -190,6 +190,18 @@ angular.module('app')
 						url:'/buttons',
 						templateUrl:'tpl/ui_buttons.html'
 					})
+					.state('app.ui.icons',{
+						url:'/icons',
+						templateUrl:'tpl/ui_icons.html'
+					})
+					.state('app.ui.grid',{
+						url:'/grid',
+						templateUrl:'tpl/ui_grid.html'
+					})
+					.state('app.ui.widgets',{
+						url:'/widgets',
+						templateUrl:'tpl/ui_widgets.html'
+					})
 
 			}
 		]
