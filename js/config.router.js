@@ -274,6 +274,37 @@ angular.module('app')
 								}]
 						}
 					})
+					//table
+					.state('app.table',{
+						url:'/table',
+						template:'<div ui-view></div>'
+					})
+					.state('app.table.static',{
+						url:'/static',
+						templateUrl:'tpl/table_static.html'
+					})
+					.state('app.table.datatable',{
+						url:'/datatable',
+						templateUrl:'tpl/table_datatable.html'
+					})
+					.state('app.table.footable',{
+						url:'/footable',
+						templateUrl:'tpl/table_footable.html'
+					})
+					.state('app.table.grid',{
+						url:'/grid',
+						templateUrl:'tpl/table_grid.html',
+						resolve:{
+							deps:['$ocLazyLoad',
+								function($ocLazyLoad) {
+									return $ocLazyLoad.load('ngGrid').then(
+										function() {
+											return $ocLazyLoad.load('js/controllers/grid.js');
+										}
+									)
+								}]
+						}
+					})
 
 			}
 		]
