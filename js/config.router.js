@@ -202,6 +202,78 @@ angular.module('app')
 						url:'/widgets',
 						templateUrl:'tpl/ui_widgets.html'
 					})
+					.state('app.ui.bootstrap',{
+						url:'/bootstrap',
+						templateUrl:'tpl/ui_bootstrap.html'
+					})
+					.state('app.ui.sortable',{
+						url:'/sortable',
+						templateUrl:'tpl/ui_sortable.html'
+					})
+					.state('app.ui.portlet',{
+						url:'/portlet',
+						templateUrl:'tpl/ui_portlet.html'
+					})
+					.state('app.ui.timeline',{
+						url:'/timeline',
+						templateUrl:'tpl/ui_timeline.html'
+					})
+					.state('app.ui.tree',{
+						ulr:'/tree',
+						templateUrl:'tpl/ui_tree.html',
+						resolve:{
+							deps:['$ocLazyLoad',
+								function($ocLazyLoad) {
+									return $ocLazyLoad.load('angularBootstrapNavTree').then(
+										function() {
+											return $ocLazyLoad.load('js/controllers/tree.js');
+										}
+									);
+								}]
+						}
+					})
+					.state('app.ui.toaster',{
+						url:'/toaster',
+						templateUrl:'tpl/ui_toaster.html',
+						resolve:{
+							deps:['$ocLazyLoad',
+								function($ocLazyLoad){
+									return $ocLazyLoad.load('toaster').then(
+										function() {
+											return $ocLazyLoad.load('js/controllers/toaster.js');
+										}
+									);
+								}]
+						}
+					})
+					.state('app.ui.jvectormap',{
+						url:'/jvectormap',
+						templateUrl:'tpl/ui_jvectormap.html',
+						resolve:{
+							deps:['$ocLazyLoad',
+								function($ocLazyLoad) {
+									return $ocLazyLoad.load('js/controllers/vectormap.js');
+                            }]
+						}
+					})
+					.state('app.ui.googlemap',{
+						url:'/googlemap',
+						templateUrl:'tpl/ui_googlemap.html',
+						resolve:{
+							deps:['uiLoad',
+								function(uiLoad) {
+									return uiLoad.load([
+										'js/app/map/load-google-maps.js',
+										'js/app/map/ui-map.js',
+										'js/app/map/map.js'
+									]).then(
+										function() {
+											return loadGoogleMaps();
+										}
+									);
+								}]
+						}
+					})
 
 			}
 		]
