@@ -305,7 +305,176 @@ angular.module('app')
 								}]
 						}
 					})
-
+					.state('app.form',{
+						url:'/form',
+						template:'<div ui-view class="fade-in"></div>',
+						resolve:{
+							deps:['uiLoad',
+								function(uiLoad) {
+									return uiLoad.load('js/controllers/form.js');
+                            }]
+						}
+					})
+					.state('app.form.elements',{
+						url:'/elements',
+						templateUrl:'tpl/form_elements.html'
+					})
+					.state('app.form.validation',{
+						url:'/validation',
+						templateUrl:'tpl/form_validation.html'
+					})
+					.state('app.form.wizard',{
+						url:'/wizard',
+						templateUrl:'tpl/form_wizard.html'
+					})
+					.state('app.form.fileupload',{
+						ulr:'/fileupload',
+						templateUrl:'tpl/form_fileupload.html',
+						resolve:{
+							deps:['$ocLazyLoad',
+								function($ocLazyLoad) {
+									return $ocLazyLoad.load('angularFileUpload').then(
+										function() {
+											return $ocLazyLoad.load('js/controllers/file-upload.js');
+										}
+									);
+								}]
+						}
+					})
+					.state('app.form.imagecrop',{
+						url:'/imgecrop',
+						templateUrl:'tpl/form_imagecrop.html',
+						resolve:{
+							deps:['$ocLazyLoad',
+								function($ocLazyLoad){
+									return $ocLazyLoad.load('ngImgCrop').then(
+										function() {
+											return $ocLazyLoad.load('js/controllers/imgcrop.js');
+										}
+									);
+								}]
+						}
+					})
+					.state('app.form.select',{
+						url:'/select',
+						templateUrl:'tpl/form_select.html',
+						controller:'SelectCtrl',
+						resolve:{
+							deps:['$ocLazyLoad',
+								function($ocLazyLoad) {
+									return $ocLazyLoad.load('ui.select').then(
+										function() {
+											return $ocLazyLoad.load('js/controllers/select.js');
+										}
+									);
+								}]
+						}
+					})
+					.state('app.form.slider',{
+						url:'/slider',
+						templateUrl:'tpl/form_slider.html',
+						controller:'SliderCtrl',
+						resolve:{
+							deps:['$ocLazyLoad',
+								function($ocLazyLoad) {
+									return $ocLazyLoad.load('vr.directives.slider').then(
+										function() {
+											return $ocLazyLoad.load('js/controllers/slider.js');
+										}
+									);
+								}]
+						}
+					})
+					.state('app.form.editor',{
+						url:'/editor',
+						templateUrl:'tpl/form_editor.html',
+						controller:'EditorCtrl',
+						resolve:{
+							deps:['$ocLazyLoad',
+								function($ocLazyLoad) {
+									return $ocLazyLoad.load('textAngular').then(
+										function() {
+											return $ocLazyLoad.load('js/controllers/editor.js');
+										}
+									);
+								}]
+						}
+					})
+					.state('app.chart',{
+						url:'/chart',
+						templateUrl:'tpl/ui_chart.html',
+						resolve:{
+							deps:['uiLoad',
+								function(uiLoad) {
+									return uiLoad.load('js/controllers/chart.js');
+								}]
+						}
+					})
+					//pages
+					.state('app.page',{
+						url:'/page',
+						template:'<div ui-view class=fade-in-down"></div>'
+					})
+					.state('app.page.profile',{
+						url:'/profile',
+						templateUrl:'tpl/page_profile.html'
+					})
+					.state('app.page.post',{
+						url:'/post',
+						templateUrl:'tpl/page_post.html'
+					})
+					.state('app.page.search',{
+						url:'/search',
+						templateUrl:'tpl/page_search.html'
+					})
+					.state('app.page.invoice',{
+						url:'/invoice',
+						templateUrl:'tpl/page_invoice.html'
+					})
+					.state('app.page.price',{
+						url:'/price',
+						templateUrl:'tpl/page_price.html'
+					})
+					.state('lockme',{
+						url:'/lockme',
+						templateUrl:'tpl/page_lockme.html'
+					})
+					.state('access',{
+						url:'/access',
+						template:'<div ui-view class="fade-in-right-big smooth"></div>'
+					})
+					.state('access.signin',{
+						url:'/signin',
+						templateUrl:'tpl/page_signin.html',
+						resolve:{
+							deps:['uiLoad',
+								function(uiLoad) {
+									return uiLoad.load(['js/controllers/signin.js']);
+								}]
+						}
+					})
+					.state('access.signup',{
+						url:'/signup',
+						templateUrl:'tpl/page_signup.html',
+						resolve:{
+							deps:['uiLoad',
+								function(uiLoad) {
+									return uiLoad.load(['js/controllers/signup.js']);
+								}]
+						}
+					})
+					.state('access.forgotpwd',{
+						url:'/forgotpwd',
+						templateUrl:'tpl/page_forgotpwd.html'
+					})
+					.state('access.404',{
+						url:'/404',
+						templateUrl:'tpl/page_404.html'
+					})
+					.state('app.docs',{
+						url:'/docs',
+						templateUrl:'tpl/docs.html'
+					})
 			}
 		]
 	);

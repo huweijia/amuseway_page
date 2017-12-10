@@ -45,7 +45,7 @@ angular.module('ui.validate',[]).directive('uiValidate',function() {
 				if(angular.isString(watch)) {
 					scope.$watch(watch,function() {
 						angular.forEach(validators,function(validatorFn) {
-							validatorF(ctrl.$modelValue);
+							validatorFn(ctrl.$modelValue);
 						});
 					});
 					return;

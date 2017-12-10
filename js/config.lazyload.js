@@ -92,14 +92,14 @@ angular.module('app')
 					name:'textAngular',
 					files:[
 						'vendor/modules/textAngular/textAngular-sanitize.min.js',
-						'vendor/modules/textAngulartextAngular.min.js'
+						'vendor/modules/textAngular/textAngular.min.js'
 					]
 				},
 				{
 					name:'vr.directives.slider',
 					files:[
 						'vendor/modules/angular-slider/angular-slider.min.js',
-						'vendor/moduels/angular-slider/angular-slider.css'
+						'vendor/modules/angular-slider/angular-slider.css'
 					]
 				},
 				{
