@@ -57,7 +57,12 @@
         "SIGNUP" : "Signup",
         "FORGOT_PASSWORD" : "Forgot password",
         "404" : "404"
-      }
+      },
+        "security":{
+            "SECURITY":"Security Auth",
+            "PASSWORDMANAGER":"Password Manager"
+        }
+
     },
     "your_stuff" : {
       "YOUR_STUFF": "Your Stuff",

@@ -8,7 +8,7 @@ html {
 
 body {
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   -webkit-font-smoothing: antialiased;
   line-height: 1.42857143;
   color: #58666e;
@@ -479,6 +479,40 @@ a.list-group-item.hover {
   border-top: 1px solid #eaedef;
 }
 
+.panel .search-box .form-group {
+  line-height: 22px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.panel .search-box .form-control {
+  height: 26px;
+  line-height: 26px;
+  padding-left: 4px;
+  border-radius: 0;
+}
+.panel .search-box .control-label {
+  padding-right: 5px !important;
+  line-height: 26px;
+}
+
+.panel .tool-box {
+  padding:8px;
+}
+.panel .tool-box .btn {
+  min-width: 60px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 15px;
+  text-align: center;
+}
+.panel .grid-box {
+  min-width: 600px;
+  /*border: 1px solid #D2DCE7;*/
+  background: #FFF;
+  padding: 8px;
+  position: relative;
+}
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
   padding: 8px 15px;
@@ -2618,6 +2652,7 @@ fieldset[disabled] .i-checks input + i:before {
 
 .datepicker {
   margin: 0 5px;
+  background: url("../img/main_icons.png") right -139px no-repeat;
 }
 
 .datepicker .btn-default {

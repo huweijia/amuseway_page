@@ -413,7 +413,7 @@ angular.module('app')
 					//pages
 					.state('app.page',{
 						url:'/page',
-						template:'<div ui-view class=fade-in-down"></div>'
+						template:'<div ui-view class="fade-in-down"></div>'
 					})
 					.state('app.page.profile',{
 						url:'/profile',
@@ -474,6 +474,25 @@ angular.module('app')
 					.state('app.docs',{
 						url:'/docs',
 						templateUrl:'tpl/docs.html'
+					})
+					//custom
+					.state('app.security',{
+                        url:'/security',
+                        template:'<div ui-view class="fade-in-down"></div>'
+					})
+					.state('app.security.passwordmanager',{
+						url:'/passwordmanager',
+						templateUrl:'tpl/security_passwordmanager.html',
+						resolve:{
+							deps:['$ocLazyLoad',
+								function($ocLazyLoad) {
+                                    return $ocLazyLoad.load('ui.grid').then(
+                                        function() {
+                                            return $ocLazyLoad.load('js/controllers/passwordManagerContext.js');
+                                        }
+                                    )
+                            }]
+						}
 					})
 			}
 		]

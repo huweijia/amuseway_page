@@ -50,6 +50,21 @@ angular.module('app')
 					]
 				},
 				{
+					name:'ui.grid',
+					files:[
+                        'vendor/modules/ui-grid/ui-grid.min.js',
+						'vendor/modules/ui-grid/ui-grid.min.css'
+					]
+				},
+                {
+                    name: 'ui.grid.*',
+                    files: [
+                        'static/bower_components/angular-ui-grid/ui-grid.min.js',
+                        'static/bower_components/angular-ui-grid/ui-grid.min.css',
+                        'static/bower_components/angular-ui-grid/ui-grid.css'
+                    ]
+                },
+				{
 					name:'ui.select',
 					files:[
 						'vendor/modules/angular-ui-select/select.min.js',
@@ -71,7 +86,7 @@ angular.module('app')
 					name:'ngImgCrop',
 					files:[
 						'vendor/modules/ngImgCrop/ng-img-crop.js',
-						'vendor/modules/ngImgCrop/ng-img-crop.css',
+						'vendor/modules/ngImgCrop/ng-img-crop.css'
 					]
 				},
 				{
