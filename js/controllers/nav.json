@@ -1,0 +1,29 @@
+[
+  {
+    "stateInclude":"app.security",
+    "translate":"aside.nav.components.security.SECURITY",
+    "name":"SECURITY",
+    "subResourceList":[
+      {
+        "translate":"aside.nav.components.security.PASSWORDMANAGE",
+        "uiSref":"app.security.passwordmanage",
+        "name":"Password Manage"
+      },
+      {
+        "translate":"aside.nav.components.security.RESOURCEMANAGE",
+        "uiSref":"app.security.resourcemanage",
+        "name":"Resource Manage"
+      },
+      {
+        "translate":"aside.nav.components.security.USERMANAGE",
+        "uiSref":"app.security.usermanage",
+        "name":"User Manage"
+      },
+      {
+        "translate":"aside.nav.components.security.ROLEMANAGE",
+        "uiSref":"app.security.rolemanage",
+        "name":"ROLE Manage"
+      }
+    ]
+  }
+]

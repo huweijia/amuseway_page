@@ -495,6 +495,13 @@ a.list-group-item.hover {
   padding-right: 5px !important;
   line-height: 26px;
 }
+.panel .search-box .btn {
+  min-width: 60px;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 15px;
+  text-align: center;
+}
 
 .panel .tool-box {
   padding:8px;
@@ -505,6 +512,7 @@ a.list-group-item.hover {
   line-height: 30px;
   padding: 0 15px;
   text-align: center;
+  font-size:12px;
 }
 .panel .grid-box {
   min-width: 600px;

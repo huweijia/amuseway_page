@@ -5,7 +5,19 @@
   <div class="panel-heading">
     Settings
   </div>
-  <div class="panel-body"> 
+  <div class="panel-body" ng-controller="AppCtrl">
+    <div class="m-b-sm">
+      Font size
+      <label class="pull-right">
+        <input id="fontSizeSlider" ui-jq="slider" ui-options="{
+                            min:5,
+                            max:25,
+                            step:1,
+                            value:{{app.settings.fontSize}}
+                            }" class="slider slider-horizontal form-control" type="text">
+        <i></i>
+      </label>
+    </div>
     <div class="m-b-sm">
       <label class="i-switch bg-info pull-right">
         <input type="checkbox" ng-model="app.settings.headerFixed">

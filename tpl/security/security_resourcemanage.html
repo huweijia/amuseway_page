@@ -1,0 +1,73 @@
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3" translate="aside.nav.components.security.RESOURCEMANAGE">Resource Manage</h1>
+</div>
+<div class="wrapper-md" ng-controller="resourceManageController">
+    <!--<div class="row">-->
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="search-box">
+                <form role="form" class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-lg-2 col-md-2">
+                            <span class="col-lg-4 col-md-4 control-label no-padder ">资源名称：</span>
+                            <span class="col-lg-8 col-md-8 no-padder">
+                                <input class="form-control input-sm" type="text" name="resourceName" ng-model="queryModel.resName"/>
+                            </span>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                            <span class="col-lg-4 col-md-4 control-label no-padder">资源标识：</span>
+                            <span class="col-lg-8 col-md-8 no-padder">
+                                <input class="form-control input-sm" type="text" name="domain" ng-model="queryModel.resCode"/>
+                            </span>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                            <span class="col-lg-4 col-md-4 control-label no-padder">上级资源：</span>
+                            <span class="col-lg-8 col-md-8 no-padder">
+                                <ui-select ng-model="queryModel.parentResCode" theme="select2" ng-disabled="disabled" style="width:100%">
+                                    <ui-select-match placeholder="选择上级资源">{{$select.selected.resName}}</ui-select-match>
+                                    <ui-select-choices repeat="res in resources | filter:$select.search" value="res.resCode">
+                                        <div ng-bind-html="res.resName | highlight:$select.search"></div>
+                                    </ui-select-choices>
+                                </ui-select>
+                            </span>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                            <span class="col-lg-4 col-md-4 control-label no-padder">资源类型：</span>
+                            <span class="col-lg-8 col-md-8 no-padder">
+                                <ui-select ng-model="queryModel.resType" theme="select2" ng-disabled="disabled" style="width:100%">
+                                    <ui-select-match placeholder="选择资源类型">{{$select.selected.dictName}}</ui-select-match>
+                                    <ui-select-choices repeat="resType in resourceTypes | filter:$select.search" value="resType.dictCode">
+                                        <div ng-bind-html="resType.dictName | highlight:$select.search"></div>
+                                    </ui-select-choices>
+                                </ui-select>
+                            </span>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                             <span class="col-lg-11 col-md-11 col-lg-offset-1 col-md-offset-1 no-padder">
+                                <button type="button" class="btn btn-info btn-sm" ng-click="doPagingSearch(1)">
+                                    <i class="glyphicon glyphicon-search"></i>&nbsp;查询
+                                </button>
+                                <button type="button" class="btn btn-default btn-sm" ng-click="reset()"><i class="glyphicon glyphicon-refresh"></i>&nbsp;重置</button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="line b-b"></div>
+            <div class="tool-box">
+                <div class="pull-left pos-rlt m-r-md">
+                    <button class="btn btn-info" ng-click="popResourceManageAdd()"><i class="glyphicon glyphicon-plus"></i>&nbsp;新增资源</button>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="grid-box">
+                <div ui-grid="gridOptions" ui-grid-resize-columns  ui-grid-selection ui-grid-auto-resize style="width: 100%;height:500px;" class="grid"></div>
+                <div class="panel-footer">
+                    <div class="col-sm-4 col-sm-offset-8 text-right text-center-xs no-padder">
+                        <pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm m-t-none m-b" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,4 +1,4 @@
-app.controller('passwordManagerController',['$scope',function($scope) {
+app.controller('passwordManageController',['$scope',function($scope) {
     $scope.gridOptions = {
         useExternalPagination: true,
         useExternalSorting: true,
@@ -42,8 +42,8 @@ app.controller('passwordManagerController',['$scope',function($scope) {
                 enableSorting:false,
                 width:'200',
                 cellTemplate: '<div class="ui-grid-cell-contents"><div class="dropdown" >' +
-                '<button type="button" ng-click="grid.appScope.popPasswordManagerEdit(row.entity)" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-cog"></i>&nbsp;编辑&nbsp;&nbsp;&nbsp;</a></button>&nbsp;' +
-                '<button type="button" ng-click="grid.appScope.doPasswordManagerDelete(row.entity.id)" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i>&nbsp;删除&nbsp;&nbsp;&nbsp;</a></button></div></div>'
+                '<button type="button" ng-click="grid.appScope.popPasswordManageEdit(row.entity)" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-cog"></i>&nbsp;编辑&nbsp;&nbsp;&nbsp;</a></button>&nbsp;' +
+                '<button type="button" ng-click="grid.appScope.doPasswordManageDelete(row.entity.id)" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i>&nbsp;删除&nbsp;&nbsp;&nbsp;</a></button></div></div>'
             }
         ],
         onRegisterApi:function(gridApi){

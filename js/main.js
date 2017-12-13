@@ -2,8 +2,8 @@
 
 
 angular.module('app')
-	.controller('AppCtrl',['$scope','$translate','$localStorage','$window',
-		function($scope,$translate,$localStorage,$window) {
+	.controller('AppCtrl',['$scope','$translate','$localStorage','$window','$http',
+		function($scope,$translate,$localStorage,$window,$http) {
 			//add 'ie' classes to html
 			var isIE = !!navigator.userAgent.match(/MSIE/i);
 			isIE && angular.element($window.document.body).addClass('ie');
@@ -24,6 +24,7 @@ angular.module('app')
 					black:'#1c2b36'
 				},
 				settings:{
+                    fontSize:12,
 					themeID:1,
 					navbarHeaderColor:'bg-black',
 					navbarCollapseColor:'bg-white-only',
@@ -34,7 +35,7 @@ angular.module('app')
 					asideDock:false,
 					container:false
 				}
-			}
+			};
 			//save settings to local storage
 			if(angular.isDefined($localStorage.settings)) {
 				$scope.app.settings = $localStorage.settings;
@@ -68,4 +69,20 @@ angular.module('app')
 				//check for ios,android,blackberry,opera mini, and windows mobiles device
 				return (/iPhone|iPod|iPad|Slik|Android|BlackBerry|Opera Mini|IEMobile/).test(ua);
 			}
+			//fontsize slider
+            angular.element("#fontSizeSlider").on('slideStop',function(data) {
+                $scope.$apply(function() {
+                    $scope.app.settings.fontSize = data.value;
+                });
+            });
+			//获取nav.json 动态生成navigation
+			$scope.getNav = function() {
+                setTimeout(function() {
+                    $http.get('js/controllers/nav.json').success(function(resources) {
+                        $scope.resources = resources;
+                    });
+                },100);
+			};
+			$scope.getNav();
+
 	}]);

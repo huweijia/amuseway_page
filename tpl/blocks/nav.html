@@ -3,6 +3,28 @@
   <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
     <span translate="aside.nav.HEADER">Navigation</span>
   </li>
+  <li ng-repeat="resource in resources" ng-class="{active:$state.include(resource.stateInclude)}">
+      <a ng-if="resource.translate" href="auto">
+        <span class="pull-right text-muted">
+          <i class="fa fa-fw fa-angle-right text"></i>
+          <i class="fa fa-fw fa-angle-down text-active"></i>
+        </span>
+        <span class="font-bold" translate="{{resource.translate}}">{{resource.name}}</span>
+      </a>
+      <ul ng-if="resource.subResourceList" class="nav nav-sub dk">
+          <li class="nav-sub-header">
+            <a href>
+              <span translate="{{resource.translate}}">{{resource.name}}</span>
+            </a>
+          </li>
+          <li ng-repeat="subResource in resource.subResourceList" ui-sref-active="active">
+            <a ui-sref="{{subResource.uiSref}}">
+              <span translate="{{subResource.translate}}">{{subResource.name}}</span>
+            </a>
+          </li>
+      </ul>
+  </li>
+  <!--
   <li>
     <a href class="auto">      
       <span class="pull-right text-muted">
@@ -379,25 +401,41 @@
         </a>
       </li>
       <li ui-sref-active="active">
-        <a ui-sref="app.security.passwordmanager">
-          <span translate="aside.nav.components.security.PASSWORDMANAGER">Password Manager</span>
+        <a ui-sref="app.security.passwordmanage">
+          <span translate="aside.nav.components.security.PASSWORDMANAGE">Password Manage</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.security.resourcemanage">
+          <span translate="aside.nav.components.security.RESOURCEMANAGE">Resource Manage</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.security.usermanage">
+          <span translate="aside.nav.components.security.USERMANAGE">User Manage</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.security.rolemanage">
+          <span translate="aside.nav.components.security.ROLEMANAGE">Role Manage</span>
         </a>
       </li>
     </ul>
   </li>
+  -->
 
   <li class="line dk hidden-folded"></li>
 
   <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">          
     <span translate="aside.nav.your_stuff.YOUR_STUFF">Your Stuff</span>
   </li>  
-  <li>
-    <a ui-sref="app.page.profile">
-      <i class="icon-user icon text-success-lter"></i>
-      <b class="badge bg-success pull-right">30%</b>
-      <span translate="aside.nav.your_stuff.PROFILE">Profile</span>
-    </a>
-  </li>
+  <!--<li>-->
+    <!--<a ui-sref="app.page.profile">-->
+      <!--<i class="icon-user icon text-success-lter"></i>-->
+      <!--<b class="badge bg-success pull-right">30%</b>-->
+      <!--<span translate="aside.nav.your_stuff.PROFILE">Profile</span>-->
+    <!--</a>-->
+  <!--</li>-->
   <li>
     <a ui-sref="app.docs">
       <i class="icon-question icon"></i>

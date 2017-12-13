@@ -60,7 +60,7 @@
       },
         "security":{
             "SECURITY":"Security Auth",
-            "PASSWORDMANAGER":"Password Manager"
+            "PASSWORDMANAGE":"Password Manage"
         }
 
     },

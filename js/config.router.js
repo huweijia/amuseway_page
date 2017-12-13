@@ -480,20 +480,63 @@ angular.module('app')
                         url:'/security',
                         template:'<div ui-view class="fade-in-down"></div>'
 					})
-					.state('app.security.passwordmanager',{
-						url:'/passwordmanager',
-						templateUrl:'tpl/security_passwordmanager.html',
+					.state('app.security.passwordmanage',{
+						url:'/passwordmanage',
+						templateUrl:'tpl/security/security_passwordmanage.html',
 						resolve:{
 							deps:['$ocLazyLoad',
 								function($ocLazyLoad) {
                                     return $ocLazyLoad.load('ui.grid').then(
                                         function() {
-                                            return $ocLazyLoad.load('js/controllers/passwordManagerContext.js');
+                                            return $ocLazyLoad.load('js/controllers/security/passwordManageContext.js');
                                         }
                                     )
                             }]
 						}
 					})
+					.state('app.security.resourcemanage',{
+						url:'/resourcemanage',
+						templateUrl:'tpl/security/security_resourcemanage.html',
+						resolve:{
+							deps:['$ocLazyLoad',
+								function($ocLazyLoad) {
+									return $ocLazyLoad.load(['ui.select','ui.grid']).then(
+										function() {
+											return $ocLazyLoad.load('js/controllers/security/resourceManageContext.js');
+										}
+									)
+								}]
+						}
+					})
+                    .state('app.security.usermanage',{
+                        url:'/usermanage',
+                        templateUrl:'tpl/security/security_usermanage.html',
+                        resolve:{
+                            deps:['$ocLazyLoad',
+                                function($ocLazyLoad) {
+                                    return $ocLazyLoad.load(['ui.select','ui.grid']).then(
+                                        function() {
+                                            return $ocLazyLoad.load('js/controllers/security/userManageContext.js');
+                                        }
+                                    )
+                                }]
+                        }
+                    })
+                    .state('app.security.rolemanage',{
+                        url:'/rolemanage',
+                        templateUrl:'tpl/security/security_rolemanage.html',
+                        resolve:{
+                            deps:['$ocLazyLoad',
+                                function($ocLazyLoad) {
+                                    return $ocLazyLoad.load(['ui.select','ui.grid']).then(
+                                        function() {
+                                            return $ocLazyLoad.load('js/controllers/security/roleManageContext.js');
+                                        }
+                                    )
+                                }]
+                        }
+                    })
+
 			}
 		]
 	);

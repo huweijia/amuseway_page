@@ -68,7 +68,8 @@ angular.module('app')
 					name:'ui.select',
 					files:[
 						'vendor/modules/angular-ui-select/select.min.js',
-						'vendor/modules/angular-ui-select/select.min.css'
+						'vendor/modules/angular-ui-select/select.min.css',
+                        'vendor/modules/angular-ui-select/select2.css'
 					]
 				},
 				{
