@@ -1,4 +1,4 @@
-app.controller('passwordManageController',['$scope',function($scope) {
+app.controller('passwordManageController',['$scope','$modal',function($scope,$modal) {
     $scope.gridOptions = {
         useExternalPagination: true,
         useExternalSorting: true,
@@ -71,4 +71,7 @@ app.controller('passwordManageController',['$scope',function($scope) {
         }.bind($scope)
     };
 
+    $scope.popPasswordManageAdd = function() {
+        var passwordManageAddModal = ModalUtil.createModal($modal,"./tpl/security/security_passwordmanage_add.html",$scope);
+    };
 }]);

@@ -1,0 +1,104 @@
+
+.checkbox {
+    line-height: 20px;
+}
+
+.dropdown-menu {
+    border: 1px solid #CCC;
+    border-radius: 0;
+}
+
+.table.extend {
+    margin-bottom: 0;
+    border: none;
+}
+
+.table.extend th {
+    border-top: none;
+    position: relative;
+}
+
+.table.extend th,
+.table.extend td {
+    border-top: none;
+    border-right: none;
+    border-color: #E2E8EE;
+}
+
+.table.extend th:first-child,
+.table.extend td:first-child {
+    border-left: none;
+}
+
+.table.extend th {
+    height: 28px;
+    line-height: 28px;
+    padding: 0;
+    background: #EEF3F8;
+    text-align: center;
+    font-weight: normal;
+}
+
+.table.extend td {
+    background: #FFF;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 4px 0 4px;
+}
+
+.modal-header {
+    height: 42px;
+    padding-top: 10px;
+    padding-bottom: 0;
+    border: none;
+}
+
+.modal-header .close {
+    color: red;
+}
+
+.modal-header .inner {
+    display: block;
+    height: 32px;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.modal-header .title {
+    display: inline-block;
+    height: 100%;
+    margin-bottom: 0;
+    border-bottom: 2px solid #359CC3;
+    font-size: 1.4rem;
+    font-weight: normal;
+}
+
+.modal-footer {
+    padding: 10px;
+}
+
+.modal-footer .btn {
+    min-width: 80px;
+    height: 32px;
+    margin: 0 4px;
+    padding: 0 15px;
+    line-height: 30px;
+    border-radius: 3px;
+    outline: 0 none;
+    text-align: center;
+}
+
+.modal-footer .btn:hover {
+    border-color: #359CC3;
+    color: #359CC3;
+}
+
+.modal-footer .btn:focus {
+    color: #FFF;
+    border-color: #359CC3;
+    background: #359CC3;
+    text-shadow: none;
+}
+
+.btn-default {
+    text-shadow: none;
+}

@@ -1,4 +1,4 @@
-app.controller('userManageController',['$scope',function($scope) {
+app.controller('userManageController',['$scope','$modal',function($scope,$modal) {
     $scope.gridOptions = {
         useExternalPagination: true,
         useExternalSorting: true,
@@ -59,5 +59,9 @@ app.controller('userManageController',['$scope',function($scope) {
             //     // }
             // }.bind($scope));
         }.bind($scope)
+    };
+
+    $scope.popUserManageAdd = function() {
+        var userManageAddModal = ModalUtil.createModal($modal,'./tpl/security/security_usermanage_add.html',$scope);
     };
 }]);

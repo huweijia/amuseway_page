@@ -488,7 +488,8 @@ angular.module('app')
 								function($ocLazyLoad) {
                                     return $ocLazyLoad.load('ui.grid').then(
                                         function() {
-                                            return $ocLazyLoad.load('js/controllers/security/passwordManageContext.js');
+                                            return $ocLazyLoad.load(['js/controllers/security/passwordManageContext.js',
+                                                'js/controllers/security/passwordManageAddContext.js']);
                                         }
                                     )
                             }]
@@ -502,7 +503,8 @@ angular.module('app')
 								function($ocLazyLoad) {
 									return $ocLazyLoad.load(['ui.select','ui.grid']).then(
 										function() {
-											return $ocLazyLoad.load('js/controllers/security/resourceManageContext.js');
+											return $ocLazyLoad.load(['js/controllers/security/resourceManageContext.js',
+												'js/controllers/security/resourceManageAddContext.js']);
 										}
 									)
 								}]
@@ -516,7 +518,8 @@ angular.module('app')
                                 function($ocLazyLoad) {
                                     return $ocLazyLoad.load(['ui.select','ui.grid']).then(
                                         function() {
-                                            return $ocLazyLoad.load('js/controllers/security/userManageContext.js');
+                                            return $ocLazyLoad.load(['js/controllers/security/userManageContext.js',
+												'js/controllers/security/userManageAddContext.js']);
                                         }
                                     )
                                 }]
@@ -530,7 +533,8 @@ angular.module('app')
                                 function($ocLazyLoad) {
                                     return $ocLazyLoad.load(['ui.select','ui.grid']).then(
                                         function() {
-                                            return $ocLazyLoad.load('js/controllers/security/roleManageContext.js');
+                                            return $ocLazyLoad.load(['js/controllers/security/roleManageContext.js',
+												'js/controllers/security/roleManageAddContext.js']);
                                         }
                                     )
                                 }]

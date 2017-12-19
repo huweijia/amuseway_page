@@ -1,4 +1,4 @@
-app.controller('roleManageController',['$scope',function($scope) {
+app.controller('roleManageController',['$scope','$modal',function($scope,$modal) {
     $scope.gridOptions = {
         useExternalPagination: true,
         useExternalSorting: true,
@@ -72,5 +72,8 @@ app.controller('roleManageController',['$scope',function($scope) {
             //     // }
             // }.bind($scope));
         }.bind($scope)
+    };
+    $scope.popRoleManageAdd = function() {
+        var roleManageAddModal = ModalUtil.createModal($modal,'./tpl/security/security_rolemanage_add.html',$scope);
     };
 }]);

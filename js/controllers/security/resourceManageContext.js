@@ -1,4 +1,4 @@
-app.controller('resourceManageController',['$scope',function($scope) {
+app.controller('resourceManageController',['$scope','$modal',function($scope,$modal) {
     $scope.gridOptions = {
         useExternalPagination: true,
         useExternalSorting: true,
@@ -84,5 +84,9 @@ app.controller('resourceManageController',['$scope',function($scope) {
     //资源类型
     $scope.resources = [];
     $scope.resourceTypes = [];
+
+    $scope.popResourceManageAdd = function() {
+        var resourceManageAddModal = ModalUtil.createModal($modal,'./tpl/security/security_resourcemanage_add.html',$scope);
+    };
 
 }]);
